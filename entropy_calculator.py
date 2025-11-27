@@ -33,7 +33,7 @@ with left_col:
     
     # Prepare data for seaborn
     df_bernoulli = pd.DataFrame({
-        'Outcome': ['Failure (0)', 'Success (1)'],
+        'Outcome': ['x=0', 'x=1'],
         'Probability': [1 - p, p]
     })
     
@@ -41,8 +41,8 @@ with left_col:
     sns.barplot(data=df_bernoulli, x='Outcome', y='Probability', 
                 palette = ['#6A8EAE', '#F3EAD3'], ax=ax, edgecolor='black', linewidth=2)
     
-    ax.set_ylabel('Probability', fontsize=12)
-    ax.set_xlabel('Outcome', fontsize=12)
+    ax.set_ylabel('p(x)', fontsize=12)
+    ax.set_xlabel(r'$x \in X$', fontsize=12)
     ax.set_ylim(0, 1.0)
     
     # Add probability values on top of bars
